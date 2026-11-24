@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Literature Detective helps young learners explore stories and improve English reading skills.">
+  <title>Literature Detective | Read, Explore, Discover</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="announcement">A little curiosity can lead to a big discovery. <span>Happy reading!</span></div>
+  <header class="site-header">
+    <a class="brand" href="#" data-nav="home" aria-label="Literature Detective home">
+      <span class="brand-mark">🔎</span>
+      <span><strong>Literature</strong><small>DETECTIVE</small></span>
+    </a>
+    <button class="mobile-menu" id="mobileMenu" aria-label="Toggle navigation">☰</button>
+    <nav class="main-nav" id="mainNav">
+      <button class="nav-link active" data-nav="home">Home</button>
+      <button class="nav-link" data-nav="library">Story Library</button>
+      <button class="nav-link" data-nav="about">How It Works</button>
+    </nav>
+    <button class="header-cta" data-nav="library">Start Reading <span>→</span></button>
+  </header>
+
+  <main>
+    <section id="homeView" class="view active">
+      <section class="hero">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="eyebrow-dot"></span> YOUR NEXT READING ADVENTURE</div>
+          <h1>Every story<br>hides a <em>clue.</em></h1>
+          <p class="hero-lead">Put on your detective hat! Read wonderful stories, discover new words, and uncover the meaning behind every adventure.</p>
+          <div class="hero-actions">
+            <button class="button button-primary" data-nav="library">Explore the library <span>→</span></button>
+            <button class="text-button" data-nav="about">How does it work? <span>↗</span></button>
+          </div>
+          <div class="hero-note"><span class="avatar-stack"><i>📚</i><i>🦁</i><i>🐢</i></span><span>Read at your own pace. Learn something new every day.</span></div>
+        </div>
+        <div class="hero-art">
+          <div class="art-spark spark-one">✦</div><div class="art-spark spark-two">✧</div>
+          <div class="art-circle"></div>
+          <div class="book-illustration">
+            <div class="book-page left-page"><span class="page-line wide"></span><span class="page-line"></span><span class="page-line short"></span><span class="tiny-star">✦</span></div>
+            <div class="book-page right-page"><div class="mini-landscape"><span>🌳</span><span>🦊</span><span>🌳</span></div><span class="page-line"></span><span class="page-line short"></span></div>
+            <div class="book-spine"></div>
+          </div>
+          <div class="floating-note note-top"><span>🕵️</span><div><b>Case file #001</b><small>Ready to investigate?</small></div></div>
+          <div class="floating-note note-bottom"><span class="note-icon">✦</span><div><b>Curiosity earns clues</b><small>Read · Think · Discover</small></div></div>
+          <div class="hero-caption">A WORLD OF STORIES AWAITS</div>
+        </div>
+      </section>
+
+      <section class="stats-strip">
+        <div><strong>03</strong><span>Classic stories</span></div>
+        <div><strong>04</strong><span>Detective missions</span></div>
+        <div><strong>∞</strong><span>Things to discover</span></div>
+      </section>
+
+      <section class="section-block">
+        <div class="section-heading">
+          <div><div class="eyebrow">CHOOSE YOUR CASE</div><h2>Stories worth <em>exploring.</em></h2></div>
+          <button class="text-button" data-nav="library">View all stories <span>→</span></button>
+        </div>
+        <div class="story-grid" id="featuredStories"></div>
+      </section>
+
+      <section class="mission-band">
+        <div class="mission-band-copy"><div class="eyebrow light">THE DETECTIVE METHOD</div><h2>Don't just read the story.<br><em>Investigate it.</em></h2><p>Every story gives you clues. Follow them to understand words, characters, events, and the message hidden inside.</p><button class="button button-light" data-nav="about">Discover the four missions <span>→</span></button></div>
+        <div class="mission-stamp">THE<br><b>READING</b><br>DETECTIVE<br><span>CLUB ✦</span></div>
+      </section>
+    </section>
+
+    <section id="libraryView" class="view">
+      <div class="page-hero">
+        <div class="eyebrow">THE STORY ARCHIVE</div>
+        <h1>Find your next <em>case.</em></h1>
+        <p>Choose a story, open its pages, and see what clues you can discover.</p>
+      </div>
+      <div class="library-toolbar">
+        <div class="search-box"><span>⌕</span><input id="storySearch" type="search" placeholder="Search stories..." aria-label="Search stories"></div>
+        <div class="filter-group" id="levelFilters">
+          <button class="filter-chip active" data-level="all">All stories</button>
+          <button class="filter-chip" data-level="Beginner">Beginner</button>
+          <button class="filter-chip" data-level="Elementary">Elementary</button>
+        </div>
+      </div>
+      <div class="story-grid library-grid" id="allStories"></div>
+    </section>
+
+    <section id="aboutView" class="view">
+      <div class="page-hero">
+        <div class="eyebrow">YOUR INVESTIGATION GUIDE</div>
+        <h1>Four missions.<br><em>One great story.</em></h1>
+        <p>Reading is more than saying the words. A good detective looks closely, thinks carefully, and asks questions.</p>
+      </div>
+      <div class="mission-list">
+        <article class="mission-explain"><div class="mission-number">01</div><div class="mission-emoji">🔤</div><div><h3>Word Detective</h3><p>Find unfamiliar words and use the clues around them to understand what they mean.</p></div></article>
+        <article class="mission-explain"><div class="mission-number">02</div><div class="mission-emoji">🧑‍🤝‍🧑</div><div><h3>Character Detective</h3><p>Study the characters. What are they like? What do their actions tell you?</p></div></article>
+        <article class="mission-explain"><div class="mission-number">03</div><div class="mission-emoji">🧩</div><div><h3>Plot Detective</h3><p>Follow the events. Find the problem, the important moments, and the ending.</p></div></article>
+        <article class="mission-explain"><div class="mission-number">04</div><div class="mission-emoji">💡</div><div><h3>Meaning Detective</h3><p>Look beyond the events. What lesson or message does the story share?</p></div></article>
+      </div>
+      <div class="about-callout"><span>📖</span><div><b>A small reading tip</b><p>If you find a difficult word, don't stop immediately. Read the whole sentence and look for clues that can help you guess its meaning.</p></div></div>
+      <button class="button button-primary centered-button" data-nav="library">Choose a story <span>→</span></button>
+    </section>
+
+    <section id="readerView" class="view">
+      <div class="reader-topbar"><button class="back-button" data-nav="library">← Story library</button><span class="case-label">LITERATURE DETECTIVE / READING ROOM</span></div>
+      <div id="readerContent"></div>
+    </section>
+
+    <section id="missionsView" class="view">
+      <div class="reader-topbar"><button class="back-button" id="backToStory">← Back to story</button><span class="case-label">YOUR INVESTIGATION / MISSIONS</span></div>
+      <div id="missionsContent"></div>
+    </section>
+
+    <section id="reportView" class="view">
+      <div class="reader-topbar"><button class="back-button" data-nav="library">← Story library</button><span class="case-label">INVESTIGATION COMPLETE</span></div>
+      <div id="reportContent"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="brand footer-brand" href="#" data-nav="home"><span class="brand-mark">🔎</span><span><strong>Literature</strong><small>DETECTIVE</small></span></a>
+    <p>Read the story. Find the clues. Discover the meaning.</p>
+    <small>Educational demonstration project · Made for curious readers</small>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="js/stories.js"></script>
+  <script src="js/progress.js"></script>
+  <script src="js/missions.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
